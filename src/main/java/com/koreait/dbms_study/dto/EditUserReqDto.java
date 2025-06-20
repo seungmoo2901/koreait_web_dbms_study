@@ -6,12 +6,14 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class AddUserReqDto {
+public class EditUserReqDto {
+    private Integer userId;
     private String username;
     private String email;
 
     public User toEntity(){
         return User.builder()
+                .userId(this.userId)
                 .username(this.username)
                 .email(this.email)
                 .build();
